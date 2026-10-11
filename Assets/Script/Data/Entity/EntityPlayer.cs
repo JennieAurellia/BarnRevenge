@@ -9,6 +9,7 @@ public class EntityPlayer : MonoBehaviour
     private float _ATK;
     private float _ATKSpeed;
     private float coin = 1000f;
+    private float _soul = 1000f;
     
     private void Awake()
     {
@@ -63,6 +64,20 @@ public class EntityPlayer : MonoBehaviour
         set { coin = value; }
     }
 
+    public float soul
+    {
+        get { return _soul; }
+        set
+        {
+            _soul = value;
+        }
+    }
+    
+    private bool IsEnoughCurrency(float curr, float cost)
+    {
+        return curr - cost > 0;
+    }
+
     public float sellItem(Item item)
     {
         coin += item.sellValue;
@@ -72,11 +87,11 @@ public class EntityPlayer : MonoBehaviour
 
     public float upgradeItem(Item item)
     {
-        if (coin >= item.upgradeCost)
+        if (IsEnoughCurrency(coin, item.upgradeCost))
         {
             coin -= item.upgradeCost;
             Debug.Log("Buying Upgrade for " + item.name + " at cost: " + item.upgradeCost + " at level: " + item.level);
-            item.UpgradeItem();
+            item.Upgrade();
             return coin;
         }
         else

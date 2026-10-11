@@ -29,7 +29,6 @@ public class AnimalMovement : MonoBehaviour
 
     void Move()
     {
-        Debug.Log(waypoints);
         Transform transform = this.transform;
         Vector2 currentPosition = transform.position;
         Vector2 targetPosition = waypoints;
