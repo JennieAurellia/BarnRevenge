@@ -8,7 +8,6 @@ public class UIGamePlay : MonoBehaviour
     public TextMeshProUGUI coinTxt;
     public TextMeshProUGUI levelTxt;
     public TMP_Dropdown itemDropdown;
-    public TextMeshProUGUI upgradeCostTxt;
     public TextMeshProUGUI sellValueTxt;
     public EntityPlayer player;
 
