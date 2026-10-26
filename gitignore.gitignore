@@ -1,0 +1,10 @@
+
+# Visual Studio local cache
+.vs/
+
+# Unity generated files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
